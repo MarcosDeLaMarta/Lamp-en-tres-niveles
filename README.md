@@ -31,10 +31,6 @@
 
 ![](img/DDBB.png)
 
-### A continuacion creamos dos tarrjetas de red con la sub red de la BBDD para asignarla a los servidores APACHE.
-
-![](img/interfaces.png)
-
 ### Depues le demos asignar una IP elastica a la intancia del balanceador.
 
 ### Primero creamos una puerta de enlace de internet y la asociamos a la VPC.
@@ -46,7 +42,7 @@
 <br />
 <br />
 
-## Configuraciion balanceador
+## Configuracion balanceador
 
 ### Primero debemos editar la tabla de enrutamiento de la VPC y le añadimos una nueva regla para permitir la conexion a la puerta de enlace de internet
 ![](img/segur.png)
@@ -65,4 +61,17 @@
 
 ## Servidores Apache
 
+
+### Para que nuestra instancias de la red privada tenga acceso a internet debemos crear una gateway nat.
+![](img/nat.png)
+
+### Despues creamos una tabla de enrutamniento para nuestra subred de la base de datos y le añadimos una ruta para que se conecte a nuestra gateway nat.
+
+![](img/tablarutas.png)
+
+
+### Una vez nuestras intancias tienen conexion a internet procedemos a configurar el servidort apache
+
+### Primero instalo la pila LAMP.
+![](img/instaapache.png)
 
